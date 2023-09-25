@@ -1,0 +1,9 @@
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']
+Style/Documentation:
+  Enabled: false
+AllCops:
+  Exclude:
+    - db/**/*
+    - config/database.yml
+    - bin/bundle

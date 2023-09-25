@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: root
+  ruby-app:
+    build:
+      context: .
+    volumes:
+      - ".:/ruby-app"
+    ports:
+      - 3001:3001
+    depends_on:
+      - db
+ 
